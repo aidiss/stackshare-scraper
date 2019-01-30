@@ -10,8 +10,7 @@ class MainSpider(CrawlSpider):
     allowed_domains = ['stackshare.io']
     start_urls = ['https://stackshare.io/python']
 
-    link_extractor = LinkExtractor(
-    restrict_xpaths=['//div[@class="similar-service-logos"]'])
+    link_extractor = LinkExtractor(restrict_xpaths=['//div[@class="similar-service-logos"]'])
     rules = (scrapy.spiders.Rule(
         link_extractor, 
         callback='parse_item', 
